@@ -1,0 +1,271 @@
+{  
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "id",
+    "badges",
+    "checkItemStates",
+    "closed",
+    "dueComplete",
+    "dateLastActivity",
+    "desc",
+    "descData",
+    "due",
+    "dueReminder",
+    "email",
+    "idBoard",
+    "idChecklists",
+    "idList",
+    "idMembers",
+    "idMembersVoted",    
+    "idShort",
+    "idAttachmentCover",
+    "labels",
+    "idLabels",
+    "manualCoverAttachment",
+    "name",
+    "pos",
+    "shortLink",
+    "shortUrl",
+    "subscribed",
+    "url"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "The Id Schema"
+    },
+    "badges": {
+      "type": "object",
+      "title": "The Badges Schema",
+      "required": [
+        "attachmentsByType",
+        "location",
+        "votes",
+        "viewingMemberVoted",
+        "subscribed",
+        "fogbugz",
+        "checkItems",
+        "checkItemsChecked",
+        "comments",
+        "attachments",
+        "description",
+        "due",
+        "dueComplete"
+      ],
+      "properties": {
+        "attachmentsByType": {
+          "type": "object",
+          "title": "The Attachmentsbytype Schema",
+          "required": [
+            "trello"
+          ],
+          "properties": {
+            "trello": {
+              "type": "object",
+              "title": "The Trello Schema",
+              "required": [
+                "board",
+                "card"
+              ],
+              "properties": {
+                "board": {
+                  "type": "integer",
+                  "title": "The Board Schema"
+                },
+                "card": {
+                  "type": "integer",
+                  "title": "The Card Schema"
+                }
+              }
+            }
+          }
+        },
+        "location": {
+          "type": "boolean",
+          "title": "The Location Schema"
+        },
+        "votes": {
+          "type": "integer",
+          "title": "The Votes Schema"
+        },
+        "viewingMemberVoted": {
+          "type": "boolean",
+          "title": "The Viewingmembervoted Schema"
+        },
+        "subscribed": {
+          "type": "boolean",
+          "title": "The Subscribed Schema"
+        },
+        "fogbugz": {
+          "type": "string",
+          "title": "The Fogbugz Schema"
+        },
+        "checkItems": {
+          "type": "integer",
+          "title": "The Checkitems Schema"
+        },
+        "checkItemsChecked": {
+          "type": "integer",
+          "title": "The Checkitemschecked Schema"
+        },
+        "comments": {
+          "type": "integer",
+          "title": "The Comments Schema"
+        },
+        "attachments": {
+          "type": "integer",
+          "title": "The Attachments Schema"
+        },
+        "description": {
+          "type": "boolean",
+          "title": "The Description Schema"
+        },
+        "due": {
+          "type": ["string","null"],
+          "title": "The Due Schema"
+        },
+        "dueComplete": {
+          "type": "boolean",
+          "title": "The Duecomplete Schema"
+        }
+      }
+    },
+    "checkItemStates": {
+      "type": "array",
+      "title": "The Checkitemstates Schema"
+    },
+    "closed": {
+      "type": "boolean",
+      "title": "The Closed Schema"
+    },
+    "dueComplete": {
+      "type": "boolean",
+      "title": "The Duecomplete Schema"
+    },
+    "dateLastActivity": {
+      "type": "string",
+      "title": "The Datelastactivity Schema"
+    },
+    "desc": {
+      "type": "string",
+      "title": "The Desc Schema"
+    },
+    "descData": {
+      "type": "null",
+      "title": "The Descdata Schema"
+    },
+    "due": {
+      "type": ["string", "null"],
+      "title": "The Due Schema"
+    },
+    "dueReminder": {
+      "type": "null",
+      "title": "The Duereminder Schema"
+    },
+    "email": {
+      "type": "null",
+      "title": "The Email Schema"
+    },
+    "idBoard": {
+      "type": "string",
+      "title": "The Idboard Schema"
+    },
+    "idChecklists": {
+      "type": "array",
+      "title": "The Idchecklists Schema"
+    },
+    "idList": {
+      "type": "string",
+      "title": "The Idlist Schema"
+    },
+    "idMembers": {
+      "type": "array",
+      "title": "The Idmembers Schema",
+      "items": {
+        "type": "string",
+        "title": "The Items Schema"
+      }
+    },
+    "idMembersVoted": {
+      "type": "array",
+      "title": "The Idmembersvoted Schema"
+    },
+    "idShort": {
+      "type": "integer",
+      "title": "The Idshort Schema"
+    },
+    "idAttachmentCover": {
+      "type": "null",
+      "title": "The Idattachmentcover Schema"
+    },
+    "labels": {
+      "type": "array",
+      "title": "The Labels Schema",
+      "items": {
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "id",
+          "idBoard",
+          "name",
+          "color"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "The Id Schema"
+          },
+          "idBoard": {
+            "type": "string",
+            "title": "The Idboard Schema"
+          },
+          "name": {
+            "type": "string",
+            "title": "The Name Schema"
+          },
+          "color": {
+            "type": "string",
+            "title": "The Color Schema"
+          }
+        }
+      }
+    },
+    "idLabels": {
+      "type": "array",
+      "title": "The Idlabels Schema",
+      "items": {
+        "type": "string",
+        "title": "The Items Schema"
+      }
+    },
+    "manualCoverAttachment": {
+      "type": "boolean",
+      "title": "The Manualcoverattachment Schema"
+    },
+    "name": {
+      "type": "string",
+      "title": "The Name Schema"
+    },
+    "pos": {
+      "type": "integer",
+      "title": "The Pos Schema"
+    },
+    "shortLink": {
+      "type": "string",
+      "title": "The Shortlink Schema"
+    },
+    "shortUrl": {
+      "type": "string",
+      "title": "The Shorturl Schema"
+    },
+    "subscribed": {
+      "type": "boolean",
+      "title": "The Subscribed Schema"
+    },
+    "url": {
+      "type": "string",
+      "title": "The Url Schema"
+    }
+  }
+}

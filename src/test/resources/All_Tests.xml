@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All_Tests">
+
+  <listeners>
+    <listener class-name="TestManager.Listener_Management"></listener>
+  </listeners>
+
+  <test name="BoardsTests">
+    <classes>
+      <class name="TestSpecs.TrelloAPI.Boards_Verification">
+        <methods>
+        <!--  <include name="Get_Board_With_Name"/>-->
+        </methods>
+      </class> <!-- TestSpecs.TrelloAPI.Boards_Verification -->
+    </classes>
+  </test> <!-- API_Automation -->
+
+  <test name="CardsTests">
+    <classes>
+      <class name="TestSpecs.TrelloAPI.Cards_Verification">
+        <methods>
+          <!--  <include name="Get_Board_With_Name"/>-->
+        </methods>
+      </class> <!-- TestSpecs.TrelloAPI.Boards_Verification -->
+    </classes>
+  </test> <!-- API_Automation -->
+
+</suite> <!-- Default Suite -->

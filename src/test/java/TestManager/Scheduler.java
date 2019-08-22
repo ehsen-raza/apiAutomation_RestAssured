@@ -1,6 +1,7 @@
 package TestManager;
 
 import Services.Report_Manager;
+import io.restassured.RestAssured;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
@@ -10,8 +11,9 @@ public class Scheduler {
 
     @BeforeClass
     public void Project_Config(){
+        System.out.println("XX");
         report_manager.Set_Environment();
-
+        RestAssured.baseURI = "https://api.trello.com";
 
     }
 
