@@ -19,7 +19,7 @@ public class Boards_Verification extends Scheduler{
     }
 
     /**
-     * This test case is getting trello board with name & id
+     * This test case is getting Trello board with name & id
      */
     @Test (priority = 1, enabled = true )
     public void Get_Board_With_Name(){
