@@ -11,7 +11,6 @@ public class Scheduler {
 
     @BeforeClass
     public void Project_Config(){
-        System.out.println("XX");
         report_manager.Set_Environment();
         RestAssured.baseURI = "https://api.trello.com";
 

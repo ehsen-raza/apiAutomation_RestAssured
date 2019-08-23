@@ -6,6 +6,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -49,4 +50,12 @@ public class Cards_Verification extends Scheduler {
         response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(file));
 
     }
+
+    /**
+    @Test
+    public void extractSingleValue_findSingleTeamName_responseAsString() {
+        String responseAsString = get("teams/66").asString();
+        String teamName = JsonPath.from(responseAsString).get("name");
+        System.out.println(teamName);
+    }*/
 }

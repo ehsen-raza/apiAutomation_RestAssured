@@ -2,13 +2,12 @@ package TestSpecs.TrelloAPI;
 
 import TestManager.Listener_Management;
 import TestManager.Scheduler;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import groovy.lang.GroovyShell;
+
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 
 
@@ -98,5 +97,33 @@ public class Boards_Verification extends Scheduler{
         assert response.path("[0].data.card.idShort").toString().matches("\\d+");
     }
 
+    // For regular expressions alphanumeric and decimal
+    /**
+     * This test case is getting trello board actions
+     */
+    @Test (priority = 2)
+    public void Get_Board_With_Actions_Simple_Format(){
+        report_manager.Init_Test("Get_Board_With_Actions", "This test case is getting trello board actions");
+        Response response = get("/1/boards/5c9c6666ec341c09aea1ac97/actions/?key=3d1717ceaa784c50b3c10c5f96169e0e&token=5ec3fdc3b4c7f040c8434583d73d3342fb7e81e233dc38a33d7ce91a95f8d197");
 
+        System.out.println(response.body().asString());
+        report_manager.LogStepInfo(response.body().asString());
+        assert response.path("[0].id").toString().matches("\\w+");
+        assert response.path("[0].data.card.idShort").toString().matches("\\d+");
+    }
+
+    // For regular expressions alphanumeric and decimal
+    /**
+     * This test case is getting trello board actions
+     */
+    @Test (priority = 2)
+    public void Get_Board_With_Actions_In_String(){
+        report_manager.Init_Test("Get_Board_With_Actions", "This test case is getting trello board actions");
+        String _id = get("/1/boards/5c9c6666ec341c09aea1ac97/actions/?key=3d1717ceaa784c50b3c10c5f96169e0e&token=5ec3fdc3b4c7f040c8434583d73d3342fb7e81e233dc38a33d7ce91a95f8d197").path("[0].id").toString();
+
+        System.out.println(_id);
+
+        assert _id.matches("\\w+");
+
+    }
 }
